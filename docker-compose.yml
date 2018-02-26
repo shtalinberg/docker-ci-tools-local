@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 networks:
   prodnetwork:
@@ -35,14 +35,14 @@ services:
     environment:
       - NEXUS_PORT=8081
       - SONAR_PORT=9000
-      - SONAR_DB_PORT=5432
+      - SONAR_DB_PORT=5434
   sonardb:
     networks:
       - prodnetwork
     restart: always
     image: postgres:9.6
     ports:
-      - "5432:5432"
+      - "5434:5434"
     environment:
      - POSTGRES_USER=sonar
      - POSTGRES_PASSWORD=sonar
